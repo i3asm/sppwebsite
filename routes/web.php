@@ -15,14 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/news/{post}', function () {
-
-    return ;
-});
+Route::get('news | News', 'news@show');
 
 Route::get('requestName', function () {
     return view('welcome', [
-        'name' => request('name')
+        'name' => request('name'),
+        'ID' => request('ID'),
+        'age' => request('age')
     ]);
 });
 
