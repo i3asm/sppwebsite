@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class news extends Controller
 {
     function show($post) {
@@ -13,7 +11,7 @@ class news extends Controller
             'second' => 'How are you doin`'
         ];
         if (!array_key_exists($post, $posts)){
-            abort(404);
+            abort(404, 'hold your horses mr.Robot 😂');
         }
 
         return view("news",[
