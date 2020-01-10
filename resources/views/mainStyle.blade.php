@@ -1,71 +1,58 @@
 <!DOCTYPE html>
+
+{{--
+	This is the main styling for the entire site.
+	It supposd to have the header and the footer
+
+	This is your area, make it as you like. your choice :)
+--}}
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+	@yield ('title')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
+	<!-- Styles -->
+	<style>
+		html, body {
+			background-color: #fff;
+			font-family: 'Tajawal', sans-serif;
+			margin: 0;
+		}
 
-        .full-height {
-            height: 100vh;
-        }
+		@yield('style')
 
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
+	</style>
 
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
+	@yield('head')
 </head>
 
 <body>
-@yield('content')
-</body>
 
+{{-- Header --}}
+{{--
+	The header must have these tabs:
+		1- SPP logo, goes to the home page (/)
+		2- About Us, goes to the aboutUs page (/aboutUs)
+		3- Archive, goes to the archive page (/archive)
+		4- GPA calculator, goes to the calculator (/GPAcalc)
+		5- (optional, if it doesn't look good don't do it) All the social media accounnts
+	I would like some shrink when you scroll down, like https://ftcksu.com
+--}}
+
+@yield('content')
+
+{{-- Footer --}}
+{{--
+	The footer must have these information:
+	1- some backgrond color, I prefer a dark color for the footer but it's your choice
+	2- copy rights, something like: Made by: Asim Alamri @TwitterAccount, Abdulaziz bin aqeel @x, mohammed alsaudoon @x, etc
+--}}
+
+</body>
 </html>

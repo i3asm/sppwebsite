@@ -11,12 +11,15 @@
 |
 */
 
+//home page
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('news | News', 'news@show');
+//test the controllers
+Route::get('news/{post}', 'news@show');
 
+//test the url variables.
 Route::get('requestName', function () {
     return view('welcome', [
         'name' => request('name'),
@@ -24,4 +27,3 @@ Route::get('requestName', function () {
         'age' => request('age')
     ]);
 });
-
