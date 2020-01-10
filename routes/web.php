@@ -16,7 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//test the controllers
+//test wildcards
+//any word after news/ will be handled by the controller
+//this is just something I wanted test
 Route::get('news/{post}', 'news@show');
 
 //test the url variables.
