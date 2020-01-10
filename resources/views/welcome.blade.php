@@ -35,11 +35,13 @@
 			position: relative;
 		}
 
+		/*
 		.top-right {
 			position: absolute;
 			right: 10px;
 			top: 18px;
 		}
+		 */
 
 		.content {
 			text-align: center;
@@ -64,6 +66,8 @@
 		}
 	</style>
 </head>
+<body>
+
 <div class="flex-center position-ref full-height">
 
 	<div class="content">
@@ -98,3 +102,5 @@
 	{{--        @endif--}}
 
 </div>
+</body>
+</html>
