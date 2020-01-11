@@ -19,7 +19,9 @@ Route::get('/', function () {
 //test wildcards
 //any word after news/ will be handled by the controller
 //this is just something I wanted test
-Route::get('news/{post}', 'news@show');
+Route::get('archive/{post}', 'archive@show');
+
+Route::get('archive', 'ArchiveController@index');
 
 //test the url variables.
 Route::get('requestName', function () {
