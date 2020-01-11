@@ -19,7 +19,7 @@ Route::get('/', function () {
 //test wildcards
 //any word after news/ will be handled by the controller
 //this is just something I wanted test
-Route::get('archive/{post}', 'archive@show');
+Route::get('archive/{post}', 'archiveController@show');
 
 Route::get('archive', 'ArchiveController@index');
 
