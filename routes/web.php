@@ -16,18 +16,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//test wildcards
-//any word after news/ will be handled by the controller
-//this is just something I wanted test
-//    Route::get('archive/{post}', 'archiveController@show');
 
 Route::get('archive', 'ArchiveController@index');
+Route::post('dashboard','ArchiveController@store');
+Route::get('dashboard','ArchiveController@edit');
+Route::put('dashboard','ArchiveController@update');
 
-//test the url variables.
-Route::get('requestName', function () {
-    return view('welcome', [
-        'name' => request('name'),
-        'ID' => request('ID'),
-        'age' => request('age')
-    ]);
-});
+//Route::get('dashboard/addArchive','ArchiveController@create');
+
+
+////test the url variables.
+//Route::get('requestName', function () {
+//    return view('welcome', [
+//        'name' => request('name'),
+//        'ID' => request('ID'),
+//        'age' => request('age')
+//    ]);
+//});

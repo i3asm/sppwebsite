@@ -2,10 +2,11 @@
 
 @section('head')
 	<style>
-		.year{
+		.year {
 
 		}
-		.person{
+
+		.person {
 
 		}
 	</style>
@@ -14,13 +15,12 @@
 @section('body')
 
 	@foreach($years as $year)
-		<p class="year">{{$year}}:</p>
-
+		<h3 class="year">{{$year}}:</h3>
 		@foreach($persons as $person)
 			@if ($year == $person->year)
-				<p class="person">{{$person->name}}</p>
+				<p class="person name">الاسم: {{$person->name}}</p>
+				<p class="person position">المنصب: {{$person->position}}</p>
 			@endif
-
 		@endforeach
 	@endforeach
 

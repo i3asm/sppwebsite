@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class ArchiveController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
 		$years = \DB::table('archives')->distinct()->pluck('year');
 		$persons = \DB::table('archives')->get();
 //		dd($persons);
@@ -23,12 +23,8 @@ class ArchiveController extends Controller
 		]);
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  \App\archive  $archive
-	 * @return \Illuminate\Http\Response
-	 */
+	// Display the specified resource.
+	// actually this method never used I was just playing with it
 	public function show(archive $archive)
 	{
 		$person = \DB::table('archive')->where('name', $archive)->firstOrFail();
@@ -37,58 +33,55 @@ class ArchiveController extends Controller
 		]);
 	}
 
+	// Show the form for creating a new resource.
+	public function create()
+	{
+		return view('dashboard.addArchive');
+	}
+
+	// Store a newly created resource in storage.
+	public function store()
+	{
+		$archive = new archive();
+		$archive->year = request('year');
+		$archive->name = request('name');
+		$archive->position = request('position');
+		$archive->save();
+
+		return redirect('/dashboard');
+	}
+
+	// Show the form for editing the specified resource.
+	public function edit(archive $archive)
+	{
+		$years = \DB::table('archives')->distinct()->pluck('year');
+		$persons = \DB::table('archives')->get();
+		return view("DashBoard", [
+			'years' => $years,
+			'persons' => $persons,
+		]);
+	}
+
+	// Update the specified resource in storage.
+	public function update()
+	{
+		$archive = archive::find(request('id'));
+		$archive->year = request('year');
+		$archive->name = request('name');
+		$archive->position = request('position');
+		$archive->save();
+
+		return redirect('/dashboard');
+	}
+
 	/**
-	 * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\archive  $archive
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(archive $archive)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\archive  $archive
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, archive $archive)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\archive  $archive
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(archive $archive)
-    {
-        //
-    }
+	 * Remove the specified resource from storage.
+	 *
+	 * @param \App\archive $archive
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy(archive $archive)
+	{
+		//
+	}
 }

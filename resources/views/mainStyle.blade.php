@@ -23,6 +23,7 @@
 			background-color: #fff;
 			font-family: 'Tajawal', sans-serif;
 			margin: 0;
+			direction: rtl;
 		}
 	</style>
 
