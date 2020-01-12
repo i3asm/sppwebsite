@@ -24,9 +24,6 @@
 			font-family: 'Tajawal', sans-serif;
 			margin: 0;
 		}
-
-		@yield('style')
-
 	</style>
 
 	@yield('head')
@@ -45,7 +42,7 @@
 	I would like some shrink when you scroll down, like https://ftcksu.com
 --}}
 
-@yield('content')
+@yield('body')
 
 {{-- Footer --}}
 {{--
