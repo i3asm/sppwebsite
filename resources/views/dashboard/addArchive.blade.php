@@ -6,7 +6,8 @@
 			direction: rtl;
 		}
 	</style>
-	<form method="POST" action="/archive">
+	<h2>إضافة أشخاص:</h2>
+	<form method="POST" action="/dashboard">
 		@csrf
 		<p class="year"> السنة : </p>
 		<input type="number" name="year" min="2008" max="2030" step="1">

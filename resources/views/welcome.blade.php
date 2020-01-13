@@ -72,12 +72,12 @@
 
 	<div class="content">
 		<div class="title m-b-md">
-			{{$name ?? 'لارافيل'}}
+			الشراكة الطلابية
 		</div>
 
 		<div class="links">
-			<a href="https://laravel.com/docs">{{$ID ?? 'Docs'}}</a>
-			<a href="https://laracasts.com">{{$age ?? 'Laracasts'}}</a>
+			<a href="/dashboard">الداشبورد</a>
+			<a href="archive">الأرشيف</a>
 			{{--                    <a href="https://laravel-news.com">News</a>--}}
 			{{--                    <a href="https://blog.laravel.com">Blog</a>--}}
 			{{--                    <a href="https://nova.laravel.com">Nova</a>--}}
