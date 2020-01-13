@@ -87,6 +87,8 @@ class ArchiveController extends Controller
 	 */
 	public function destroy(archive $archive)
 	{
-		//
+		$archive = archive::find(request('id'));
+		$archive->delete();
+		return redirect('/dashboard');
 	}
 }

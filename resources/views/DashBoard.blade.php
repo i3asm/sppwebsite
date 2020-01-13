@@ -26,6 +26,11 @@
 					<input type="text" name="name" value="{{$person->name}}">
 					<input type="text" name="position" value="{{$person->position}}">
 					<button type="submit">تحديث</button>
+				</form>
+				<form method="post" action="dashboard">
+					@csrf
+					@method('DELETE')
+					<input type="hidden" name="id" value="{{$person->id}}">
 					<button type="submit">حذف</button>
 				</form>
 
