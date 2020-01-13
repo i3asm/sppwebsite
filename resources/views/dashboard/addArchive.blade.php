@@ -3,7 +3,6 @@
 {{--@section('body')--}}
 	<style>
 		body{
-			direction: rtl;
 		}
 	</style>
 	<h2>إضافة أشخاص:</h2>
