@@ -1,15 +1,40 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-</head>
-<body>
+@extends('mainStyle')
+{{--  This section is for editing the archive only  --}}
+{{--  maybe some time there will be other things to edit  --}}
+
+@section('head')
+	<style>
+		body{
+			margin: 50px;
+		}
+	</style>
+@endsection
 
 
+@section('body')
 
-</body>
-</html>
+	@foreach($years as $year)
+		<h3 class="year">{{$year}}:</h3>
+		@foreach($persons as $person)
+			@if ($year == $person->year)
+
+				<form method="POST" action="/dashboard">
+					@csrf
+					@method('PUT')
+					<input type="hidden" name="id" value="{{$person->id}}">
+					<input type="number" name="year" min="2008" max="2030" step="1" value="{{$person->year}}">
+					<input type="text" name="name" value="{{$person->name}}">
+					<input type="text" name="position" value="{{$person->position}}">
+					<button type="submit">تحديث</button>
+					<button type="submit">حذف</button>
+				</form>
+
+				<br>
+			@endif
+		@endforeach
+		<br>
+	@endforeach
+
+	@component('dashboard.addArchive') @endcomponent
+
+@endsection
