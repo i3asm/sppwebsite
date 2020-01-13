@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\archive;
-use Illuminate\Http\Request;
 
 class ArchiveController extends Controller
 {
@@ -42,6 +41,12 @@ class ArchiveController extends Controller
 	// Store a newly created resource in storage.
 	public function store()
 	{
+		request()->validate([
+			'year' => 'required',
+			'name' => 'required',
+			'position' => 'required'
+		]);
+
 		$archive = new archive();
 		$archive->year = request('year');
 		$archive->name = request('name');
