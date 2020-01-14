@@ -1,6 +1,4 @@
 @extends('mainStyle')
-{{--  This section is for editing the archive only  --}}
-{{--  maybe some time there will be other things to edit  --}}
 
 @section('head')
 	<style>
@@ -12,6 +10,8 @@
 
 
 @section('body')
+	{{--  This is for editing the archive only  --}}
+	{{--  maybe some time there will be other things to edit  --}}
 
 	@foreach($years as $year)
 		<h3 class="year">{{$year}}:</h3>
@@ -25,8 +25,13 @@
 					<input type="number" name="year" min="2008" max="2030" step="1" value="{{$person->year}}">
 					<input type="text" name="name" value="{{$person->name}}">
 					<input type="text" name="position" value="{{$person->position}}">
-					<button type="submit">تحديث</button>
-					<button type="submit">حذف</button>
+					<button type="submit">تحديث البيانات</button>
+				</form>
+				<form method="post" action="dashboard">
+					@csrf
+					@method('DELETE')
+					<input type="hidden" name="id" value="{{$person->id}}">
+					<button type="submit">حذف البيانات</button>
 				</form>
 
 				<br>

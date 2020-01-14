@@ -18,9 +18,10 @@ Route::get('/', function () {
 
 
 Route::get('archive', 'ArchiveController@index');
-Route::post('dashboard','ArchiveController@store');
 Route::get('dashboard','ArchiveController@edit');
+Route::post('dashboard','ArchiveController@store');
 Route::put('dashboard','ArchiveController@update');
+Route::delete('dashboard','ArchiveController@destroy');
 
 //Route::get('dashboard/addArchive','ArchiveController@create');
 
