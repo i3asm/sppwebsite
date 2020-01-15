@@ -13,9 +13,8 @@ class ArchiveController extends Controller
 	 */
 	public function index()
 	{
-		$years = \DB::table('archives')->distinct()->pluck('year');
+		$years = \DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
 		$persons = \DB::table('archives')->get();
-//		dd($persons);
 		return view("archive", [
 			'years' => $years,
 			'persons' => $persons,
@@ -59,7 +58,7 @@ class ArchiveController extends Controller
 	// Show the form for editing the specified resource.
 	public function edit(archive $archive)
 	{
-		$years = \DB::table('archives')->distinct()->pluck('year');
+		$years = \DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
 		$persons = \DB::table('archives')->get();
 		return view("DashBoard", [
 			'years' => $years,

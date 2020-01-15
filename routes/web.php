@@ -16,14 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('archive', 'ArchiveController@index');
-Route::get('dashboard','ArchiveController@edit');
-Route::post('dashboard','ArchiveController@store');
-Route::put('dashboard','ArchiveController@update');
-Route::delete('dashboard','ArchiveController@destroy');
-
-
 
 ////test the uri variables.
 //Route::get('requestName', function () {
@@ -33,3 +26,10 @@ Route::delete('dashboard','ArchiveController@destroy');
 //        'age' => request('age')
 //    ]);
 //});
+
+Auth::routes();
+
+Route::post('dashboard','ArchiveController@store');
+Route::put('dashboard','ArchiveController@update');
+Route::delete('dashboard','ArchiveController@destroy');
+Route::get('dashboard', 'HomeController@index')->name('home');
