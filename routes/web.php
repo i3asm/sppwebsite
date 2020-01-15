@@ -23,10 +23,9 @@ Route::post('dashboard','ArchiveController@store');
 Route::put('dashboard','ArchiveController@update');
 Route::delete('dashboard','ArchiveController@destroy');
 
-//Route::get('dashboard/addArchive','ArchiveController@create');
 
 
-////test the url variables.
+////test the uri variables.
 //Route::get('requestName', function () {
 //    return view('welcome', [
 //        'name' => request('name'),
