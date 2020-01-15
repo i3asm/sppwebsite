@@ -29,7 +29,7 @@ Route::get('archive', 'ArchiveController@index');
 
 Auth::routes();
 
+Route::get('dashboard', 'HomeController@index')->name('home');
 Route::post('dashboard','ArchiveController@store');
 Route::put('dashboard','ArchiveController@update');
 Route::delete('dashboard','ArchiveController@destroy');
-Route::get('dashboard', 'HomeController@index')->name('home');
