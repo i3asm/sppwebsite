@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('archive', 'ArchiveController@index');
+Route::get('archive', 'HomeController@index');
 
 ////test the uri variables.
 //Route::get('requestName', function () {
@@ -30,6 +30,6 @@ Route::get('archive', 'ArchiveController@index');
 Auth::routes();
 
 Route::get('dashboard', 'HomeController@index')->name('home');
-Route::post('dashboard','ArchiveController@store');
-Route::put('dashboard','ArchiveController@update');
-Route::delete('dashboard','ArchiveController@destroy');
+Route::post('dashboard','HomeController@store');
+Route::put('dashboard','HomeController@update');
+Route::delete('dashboard','HomeController@destroy');

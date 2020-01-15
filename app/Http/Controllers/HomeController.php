@@ -25,7 +25,7 @@ class HomeController extends Controller
     {
         $years = \DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
         $persons = \DB::table('archives')->get();
-        return view("home", [
+        return view("dashboard", [
             'years' => $years,
             'persons' => $persons,
         ]);
@@ -55,7 +55,7 @@ class HomeController extends Controller
     {
         $years = \DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
         $persons = \DB::table('archives')->get();
-        return view("DashBoard", [
+        return view("dashboard", [
             'years' => $years,
             'persons' => $persons,
         ]);
