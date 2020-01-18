@@ -62,9 +62,9 @@ class HomeController extends Controller
     }
 
     // Update the specified resource in storage.
-    public function update()
+    public function update($id)
     {
-        $archive = archive::find(request('id'));
+        $archive = archive::findOrFail($id);
         $archive->year = request('year');
         $archive->name = request('name');
         $archive->position = request('position');
@@ -79,11 +79,11 @@ class HomeController extends Controller
      * @param \App\archive $archive
      * @return \Illuminate\Http\Response
      */
-    public function destroy(archive $archive)
+    public function destroy($id)
     {
-        $archive = archive::find(request('id'));
+        $archive = archive::findOrFail($id);
         $archive->delete();
-        return redirect('/dashboard');
+        return redirect(route('home'));
     }
 
 }
