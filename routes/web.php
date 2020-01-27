@@ -16,20 +16,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('archive', 'ArchiveController@index');
+Route::get('/logged', function () {
+    return view('auth.afterLogin');
+});
 
-////test the uri variables.
-//Route::get('requestName', function () {
-//    return view('welcome', [
-//        'name' => request('name'),
-//        'ID' => request('ID'),
-//        'age' => request('age')
-//    ]);
-//});
+Route::get('archive', 'ArchiveController@index')->name('archive');
 
-Auth::routes();
+Auth::routes(['verify' => 'true']);
 
-Route::post('dashboard','ArchiveController@store');
-Route::put('dashboard','ArchiveController@update');
-Route::delete('dashboard','ArchiveController@destroy');
-Route::get('dashboard', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@edit')->name('admin.edit')->middleware(['verified', 'admin']);
+Route::post('/admin','AdminController@store')->name('admin.store')->middleware(['verified', 'admin']);
+Route::put('/admin/{id}','AdminController@update')->name('admin.update')->middleware(['verified', 'admin']);
+Route::get('/admin/{id}','AdminController@destroy')->name('admin.delete')->middleware(['verified', 'admin']);
+
+Route::put('/users/{id}', 'userController@update')->name('users.update')->middleware(['verified', 'admin', 'password.confirm']);
+Route::get('/users/{id}', 'userController@distroy')->name('users.delete')->middleware(['verified', 'admin', 'password.confirm']);

@@ -76,7 +76,7 @@
 		</div>
 
 		<div class="links">
-			<a href="/dashboard">الداشبورد</a>
+			<a href="/admin">لوحة التحكم</a>
 			<a href="archive">الأرشيف</a>
 			{{--                    <a href="https://laravel-news.com">News</a>--}}
 			{{--                    <a href="https://blog.laravel.com">Blog</a>--}}

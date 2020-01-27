@@ -1,23 +1,66 @@
 {{--@extends('mainStyle')--}}
 
 {{--@section('body')--}}
-	<style>
-		body{
-		}
-	</style>
-	<h2>إضافة أشخاص:</h2>
-	<form method="POST" action="/dashboard">
-		@csrf
-		<p class="year"> السنة : </p>
-		<input type="number" name="year" min="1350" max="2050" step="1" required>
-{{--		<p class="help is-danger">{{ $errors->first()}}</p>--}}
+<h2 class="rtl">إضافة أشخاص:</h2>
 
-		<p class="name"> الاسم : </p>
-		<input type="text" name="name" required>
-{{--		<p class="help is-danger">{{ $errors->first()}}</p>--}}
+<div class="row justify-content-center">
+    <div class="col-md-9">
 
-		<p class="name"> المنصب : </p>
-		<input type="text" name="position" placeholder="ننصح باستخدم اسم موحد لكل منصب" required>
-{{--		<p class="help is-danger">{{ $errors->first()}}</p>--}}
-		<button type="submit">إرسال</button>
-	</form>
+
+        <form method="POST" action="{{ route('admin.store') }}">
+            @csrf
+
+            <div class="form-group row">
+                <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('السنة') }}</label>
+                <div class="col-md-6">
+                    <input id="year" type="number" class="form-control @error('year') is-invalid @enderror" name="year"
+                           required min="1350" max="2050">
+
+                    @error('year')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('الاسم') }}</label>
+
+                <div class="col-md-6">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                           required autocomplete="name">
+
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="position" class="col-md-4 col-form-label text-md-right">{{ __('المنصب') }}</label>
+
+                <div class="col-md-6">
+                    <input id="position" type="text" class="form-control @error('position') is-invalid @enderror"
+                           name="position" required>
+
+                    @error('position')
+                    <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="form-group row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('add to archive') }}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
