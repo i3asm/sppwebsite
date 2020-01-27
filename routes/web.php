@@ -18,15 +18,6 @@ Route::get('/', function () {
 
 Route::get('archive', 'ArchiveController@index');
 
-////test the uri variables.
-//Route::get('requestName', function () {
-//    return view('welcome', [
-//        'name' => request('name'),
-//        'ID' => request('ID'),
-//        'age' => request('age')
-//    ]);
-//});
-
 Auth::routes();
 
 Route::post('dashboard','ArchiveController@store');
