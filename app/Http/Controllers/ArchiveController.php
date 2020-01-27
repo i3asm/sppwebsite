@@ -24,6 +24,14 @@ class ArchiveController extends Controller
 		]);
 	}
 
+	//TODO: EN
+    //TODO: start year
+    //TODO: end year
+    //TODO: images
+    //TODO: links
+    //TODO: video
+    //TODO:
+
 //	// Display the specified resource.
 //	// actually this method never used I was just playing with it
 //	public function show(archive $archive)
