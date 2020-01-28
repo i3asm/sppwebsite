@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\archive;
+use App\homePage;
 use Auth;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-/*
-    // Display the specified resource.
-    // actually this method never used I was just playing with it
-    public function show(archive $archive)
-    {
-        $person = \DB::table('archive')->where('name', $archive)->firstOrFail();
-        return view("news", [
-            'person' => $person
-        ]);
-    }
-*/
+    /*
+        // Display the specified resource.
+        // actually this method never used I was just playing with it
+        public function show(archive $archive)
+        {
+            $person = \DB::table('archive')->where('name', $archive)->firstOrFail();
+            return view("news", [
+                'person' => $person
+            ]);
+        }
+    */
 
     // Show the form for creating a new resource.
     public function create()
@@ -51,16 +52,19 @@ class AdminController extends Controller
         $years = \DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
         $persons = \DB::table('archives')->get();
         $users = \DB::table('users')->orderBy('id', 'asc')->get();
+        $homes = \DB::table('home_pages')->get();
         return view("dashboard", [
             'years' => $years,
             'persons' => $persons,
             'users' => $users,
+            'homes' => $homes,
         ]);
     }
 
     // Update the specified resource in storage.
     public function update($id)
     {
+
         request()->validate([
             'year' => ['required', 'numeric', 'max:2050', 'min:1350'],
             'name' => 'required',

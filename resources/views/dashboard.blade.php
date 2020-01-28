@@ -66,18 +66,27 @@
                                             @csrf
                                             @method('PUT')
                                             <label class="rtl">السنة:
-                                                <input type="number" class="form-control" name="year" min="1350"
+                                                <input type="text" class="form-control" name="year" min="1350"
                                                        max="2050" step="1"
-                                                       value="{{$person->year}}">
+                                                       value="{{$person->year}}" required>
                                             </label>
+                                            @error('year')
+                                            <p class="text-danger"> year must be a number from 1350 to 2050</p>
+                                            @enderror
                                             <label class="rtl">الاسم:
                                                 <input type="text" class="form-control" name="name"
-                                                       value="{{$person->name}}">
+                                                       value="{{$person->name}}" required>
                                             </label>
+                                            @error('name')
+                                            <p class="text-danger">PUT A NAME !!!</p>
+                                            @enderror
                                             <label class="rtl">المنصب:
                                                 <input type="text" class="form-control" name="position"
-                                                       value="{{$person->position}}">
+                                                       value="{{$person->position}}" required>
                                             </label>
+                                            @error('position')
+                                            <p class="text-danger">PUT A POSITION !!!</p>
+                                            @enderror
                                             <br>
                                             <button type="submit" class="btn btn-primary">تحديث البيانات</button>
                                             <a href="{{route('admin.delete',[$person->id])}}" class="btn btn-danger"
@@ -87,7 +96,7 @@
                                     @endif
                                 @endforeach
                             </div>
-                        @endforeach
+                            @endforeach
                         <div class="seperator"></div>
                         @component('dashboard.addArchive') @endcomponent
                     </div>
@@ -104,7 +113,16 @@
                 <div class="card">
                     <div class="card-header rtl">محتويات الصفحة الرئيسية</div>
                     <div class="card-body">
-                        <p> hello </p>
+                        @component('dashboard.homeEdit', ['homes' => $homes])
+                        @endcomponent
+
+                        @component('dashboard.homeAdd')
+                        @endcomponent
+
+                        {{--                        @foreach($homes as $home)--}}
+                        {{--                            <p>{!! $home->title !!}</p>--}}
+                        {{--                            <p>{!! nl2br(e($home->body)) !!}</p>--}}
+                        {{--                        @endforeach--}}
                     </div>
                 </div>
             </div>

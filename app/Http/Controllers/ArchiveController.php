@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\archive;
+use App\homePage;
 use DB;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;

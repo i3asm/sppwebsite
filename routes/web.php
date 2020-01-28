@@ -25,9 +25,14 @@ Route::get('archive', 'ArchiveController@index')->name('archive');
 Auth::routes(['verify' => 'true']);
 
 Route::get('/admin', 'AdminController@edit')->name('admin.edit')->middleware(['verified', 'admin']);
-Route::post('/admin','AdminController@store')->name('admin.store')->middleware(['verified', 'admin']);
-Route::put('/admin/{id}','AdminController@update')->name('admin.update')->middleware(['verified', 'admin']);
-Route::get('/admin/{id}','AdminController@destroy')->name('admin.delete')->middleware(['verified', 'admin']);
+Route::post('/admin', 'AdminController@store')->name('admin.store')->middleware(['verified', 'admin']);
+Route::put('/admin/{id}', 'AdminController@update')->name('admin.update')->middleware(['verified', 'admin']);
+Route::get('/admin/{id}', 'AdminController@destroy')->name('admin.delete')->middleware(['verified', 'admin']);
 
 Route::put('/users/{id}', 'userController@update')->name('users.update')->middleware(['verified', 'admin', 'password.confirm']);
 Route::get('/users/{id}', 'userController@distroy')->name('users.delete')->middleware(['verified', 'admin', 'password.confirm']);
+
+Route::put('/homePage', 'HomePageController@store')->name('home.store')->middleware(['verified', 'admin']);
+Route::post('/homePage/{id}', 'HomePageController@edit')->name('home.edit')->middleware(['verified', 'admin']);
+//Route::get('/homePage', 'HomePageController@update')->name('home.update');
+//Route::post('/homePage', 'HomePageController@destroy')->name('home.destroy');

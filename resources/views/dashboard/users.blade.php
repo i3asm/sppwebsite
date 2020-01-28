@@ -8,9 +8,10 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('الاسم') }}</label>
+                            <label for="username"
+                                   class="col-md-4 col-form-label text-md-right">{{ __('الاسم') }}</label>
                             <div class="col-md-6">
-                                <input type="text" id="name" class="form-control" name="name"
+                                <input type="text" id="username" class="form-control" name="name"
                                        value="{{$user->name}}">
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
