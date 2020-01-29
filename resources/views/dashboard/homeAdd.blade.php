@@ -7,21 +7,6 @@
             @csrf
             @method('put')
 
-            <div class="rtl">
-                {{--                <p>العناوين المقبولة:</p>--}}
-                {{--                <p class="text-danger">العناوين لازم تكتبها بالانجليزي وهي تلقائياً بتصير عربي</p>--}}
-                {{--                <p>aboutUs = من نحن؟</p>--}}
-                {{--                <p>vision = رؤيتنا</p>--}}
-                {{--                <p>message = رسالتنا</p>--}}
-                {{--                <p>goals = أهدافنا</p>--}}
-                {{--                <p>الفرق:</p>--}}
-                {{--                <p>media = الفريق الاعلامي</p>--}}
-                {{--                <p>pr = العلاقات العامة</p>--}}
-                {{--                <p>hr = الموارد البشرية</p>--}}
-                {{--                <p>oas = التنظيم والدعم</p>--}}
-                {{--                <p>quality = الجودة</p>--}}
-            </div>
-
             <div class="form-group rtl">
                 <label for="title">العنوان</label>
                 <select class="form-control" id="title" name="title" form="home" required>

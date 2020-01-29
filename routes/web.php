@@ -16,12 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/logged', function () {
-    return view('auth.afterLogin');
-});
-
+// the archive page, probably will be changed to something like "graduates" or somethin'
 Route::get('archive', 'ArchiveController@index')->name('archive');
 
+// all the authentication routes
 Auth::routes(['verify' => 'true']);
 
 Route::get('/admin', 'AdminController@edit')->name('admin.edit')->middleware(['verified', 'admin']);
@@ -29,10 +27,15 @@ Route::post('/admin', 'AdminController@store')->name('admin.store')->middleware(
 Route::put('/admin/{id}', 'AdminController@update')->name('admin.update')->middleware(['verified', 'admin']);
 Route::get('/admin/{id}', 'AdminController@destroy')->name('admin.delete')->middleware(['verified', 'admin']);
 
+// update the avatar of archive, it is a blank avatar.jpg by default
+Route::post('avatar/{id}', 'AdminController@update_avatar')->name('avatar.update')->middleware(['verified', 'admin']);
+
+// control the admins of the page, the website will be working for the new leaders
 Route::put('/users/{id}', 'userController@update')->name('users.update')->middleware(['verified', 'admin', 'password.confirm']);
 Route::get('/users/{id}', 'userController@distroy')->name('users.delete')->middleware(['verified', 'admin', 'password.confirm']);
 
+// control home page elements, to make sure the website only need the spp staff
 Route::put('/homePage', 'HomePageController@store')->name('home.store')->middleware(['verified', 'admin']);
 Route::post('/homePage/{id}', 'HomePageController@edit')->name('home.edit')->middleware(['verified', 'admin']);
-//Route::get('/homePage', 'HomePageController@update')->name('home.update');
-//Route::post('/homePage', 'HomePageController@destroy')->name('home.destroy');
+
+

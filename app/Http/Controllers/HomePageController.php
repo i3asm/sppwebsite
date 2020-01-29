@@ -10,7 +10,6 @@ class HomePageController extends Controller
 
     public function store()
     {
-        dd(\request());
         request()->validate([
             'title' => 'required',
             'body' => 'required',
@@ -26,19 +25,17 @@ class HomePageController extends Controller
     public function edit($id)
     {
         $home = homePage::find($id);
+
         switch (request()->input('action')) {
             case 'update':
-                dd(request('title'));
                 request()->validate([
                     'title' => 'required',
                     'body' => 'required',
                 ]);
-
                 $home->title = request('title');
                 $home->body = request('body');
                 $home->save();
                 break;
-
             case 'delete':
                 $home->delete();
                 break;
