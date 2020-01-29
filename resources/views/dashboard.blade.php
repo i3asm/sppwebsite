@@ -29,7 +29,7 @@
         .seperator {
             height: 2px;
             margin: 19px;
-            background-color: #95999c;
+            background-color: #ddd;
         }
 
     </style>
