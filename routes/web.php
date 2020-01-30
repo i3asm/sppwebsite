@@ -11,12 +11,14 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 //home page
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-// the archive page, probably will be changed to something like "graduates" or somethin'
+// the archive page, probably will be changed to something like "graduates" or something
 Route::get('archive', 'ArchiveController@index')->name('archive');
 
 // all the authentication routes
@@ -37,5 +39,4 @@ Route::get('/users/{id}', 'userController@distroy')->name('users.delete')->middl
 // control home page elements, to make sure the website only need the spp staff
 Route::put('/homePage', 'HomePageController@store')->name('home.store')->middleware(['verified', 'admin']);
 Route::post('/homePage/{id}', 'HomePageController@edit')->name('home.edit')->middleware(['verified', 'admin']);
-
 
