@@ -17,8 +17,13 @@ class CreateArchivesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('year');
             $table->text('name');
-			$table->text('position');
-			$table->timestamps();
+            $table->text('position');
+            $table->text('twitter')->nullable();
+            $table->text('linkedin')->nullable();
+            $table->text('phone')->nullable();
+            $table->text('email')->nullable();
+            $table->string('avatar')->default('avatar.jpg');
+            $table->timestamps();
         });
     }
 

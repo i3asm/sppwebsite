@@ -11,6 +11,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $year
  * @property string $name
  * @property string $position
+ * @property string $twitter
+ * @property string $linkedin
+ * @property string $phone
+ * @property string $email
+ * @property string $avatar
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\archive newModelQuery()
