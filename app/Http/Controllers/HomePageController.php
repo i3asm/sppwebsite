@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\homePage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomePageController extends Controller
 {
+
+    public function index()
+    {
+        $homes = DB::table('home_pages')->get();
+//        dd($homes->where('title', 'goals')->first()->body);
+        return view('home', [
+//            'homes' => $homes,
+        ]);
+    }
 
     public function store()
     {

@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse text-right" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">رابطة القادة</a>
+                    <a class="nav-link js-scroll-trigger" href="/archive">رابطة القادة</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#">إحسب معدلك</a>
@@ -75,9 +75,12 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading text-uppercase">من نحن؟</h2>
-                <h3 class="section-subheading text-muted">برنامج الشراكة الطلابية يهتم باحتضان المبادرات الطلابية وصقل
-                    الجوانب
-                    المهارية لدى الطلبة بطريقة عمل إبداعية وإحترافية</h3>
+                @if (isset($homes))
+                    <h3 class="section-subheading text-muted">{!! nl2br($homes->where('title', 'aboutUs')->first()->body) !!}</h3>
+                @else
+                    <h3 class="section-subheading text-muted">برنامج الشراكة الطلابية يهتم باحتضان المبادرات الطلابية
+                        وصقل الجوانب المهارية لدى الطلبة بطريقة عمل إبداعية وإحترافية</h3>
+                @endif
             </div>
         </div>
         <div class="row text-center">
@@ -87,7 +90,11 @@
             <i class="fas fa-eye fa-stack-1x fa-inverse "></i>
           </span>
                 <h4 class="service-heading">رؤيتنا</h4>
-                <p class="text-muted text-center">الريادة والتميز بالأنشطة الطلابية</p>
+                @if (isset($homes))
+                    <p class="text-muted text-center">{!! nl2br($homes->where('title', 'vision')->first()->body) !!}
+                @else
+                    <p class="text-muted text-center">الريادة والتميز بالأنشطة الطلابية
+                @endif
                 <p><br></p>
             </div>
             <div class="col-md-4">
@@ -96,9 +103,12 @@
             <i class="fas fa-envelope-open fa-stack-1x fa-inverse"></i>
           </span>
                 <h4 class="service-heading">رسالتنا</h4>
-                <p class="text-muted">تمكين الطلبة من اكتشاف ذواتهم وتنمية قدراتهم من خلال بيئة إيجابية محفزة على
-                    الإبداع
-                    والإبتكار</p>
+                @if (isset($homes))
+                    <p class="text-muted">{!! nl2br($homes->where('title', 'message')->first()->body) !!}</p>
+                @else
+                    <p class="text-muted">تمكين الطلبة من اكتشاف ذواتهم وتنمية قدراتهم من خلال بيئة إيجابية محفزة على
+                        الإبداع والإبتكار</p>
+                @endif
                 <p><br></p>
             </div>
             <div class="col-md-4">
@@ -108,8 +118,14 @@
             <i class="fas fa-bullseye fa-stack-1x fa-inverse"></i>
           </span>
                 <h4 class="service-heading"> أهدافنا</h4>
-                <p class="text-muted text-justify text-center">تحفيز وتمكين اطلاق المبادرات الطلابية<br> طموح الطلبة
-                    لوطن حيوي ومزدهر<br>تطوير مهارات و مواهب الطلبة<br>تكوين قيادات شابة للمجتمع</p>
+                @if (isset($homes))
+                    <p class="text-muted text-justify text-center">{!! nl2br(e($homes->where('title', 'goals')->first()->body))!!}</p>
+                @else
+                    <p class="text-muted text-justify text-center">تحفيز وتمكين اطلاق المبادرات الطلابية<br/>
+                        طموح الطلبة لوطن حيوي ومزدهر<br/>
+                        تطوير مهارات و مواهب الطلبة<br/>
+                        تكوين قيادات شابة للمجتمع</p>
+                @endif
                 <p><br></p>
             </div>
         </div>
@@ -140,9 +156,12 @@
                                 <h4 class="subheading ">الفريق الإعلامي</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">.القيام بالأمور الإعلامية من تنسيق وتوثيق ونشر فعاليات الشراكة
-                                    الطلابية وتحقيق
-                                    المحتوى</p>
+                                @if (isset($homes))
+                                    <p class="text-muted">{!! nl2br(e($homes->where('title', 'media')->first()->body))!!}</p>
+                                @else
+                                    <p class="text-muted">القيام بالأمور الإعلامية من تنسيق وتوثيق ونشر فعاليات الشراكة
+                                        الطلابية وتحقيق المحتوى</p>
+                                @endif
                             </div>
                         </div>
                     </li>
@@ -156,8 +175,12 @@
                                 <h4 class="subheading ">فريق العلاقات العامة</h4>
                             </div>
                             <div class="timeline-body  ">
-                                <p class="text-muted ">تمثيل الشراكة والعمل على تسويقها وجلب الرعايات والتواصل مع الجهات
-                                    الراعية</p>
+                                @if (isset($homes))
+                                    <p class="text-muted ">{!! nl2br(e($homes->where('title', 'pr')->first()->body))!!}</p>
+                                @else
+                                    <p class="text-muted ">تمثيل الشراكة والعمل على تسويقها وجلب الرعايات والتواصل مع
+                                        الجهات الراعية</p>
+                                @endif
                             </div>
                         </div>
                     </li>
@@ -171,7 +194,11 @@
                                 <h4 class="subheading">فريق الموارد البشرية</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted"> إدارة شؤون أعلى موارد الأرض الإنسان واستقطاب الكفاءات منهم</p>
+                                @if (isset($homes))
+                                    <p class="text-muted">{!! nl2br(e($homes->where('title', 'hr')->first()->body))!!}</p>
+                                @else
+                                    <p class="text-muted">إدارة شؤون أعلى موارد الأرض الإنسان واستقطاب الكفاءات منهم</p>
+                                @endif
                             </div>
                         </div>
                     </li>
@@ -185,8 +212,12 @@
                                 <h4 class="subheading">فريق التنظيم والدعم</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">فريق مختص بإدارة الحشود و تنظيم المعارض والفعاليات داخل وخارج
-                                    الشراكة</p>
+                                @if (isset($homes))
+                                    <p class="text-muted">{!! nl2br(e($homes->where('title', 'oas')->first()->body))!!}</p>
+                                @else
+                                    <p class="text-muted">فريق مختص بإدارة الحشود و تنظيم المعارض والفعاليات داخل وخارج
+                                        الشراكة</p>
+                                @endif
                             </div>
                         </div>
                     </li>
@@ -200,9 +231,12 @@
                                 <h4 class="subheading">فريق الجودة</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">مراجعة بنود تقييم الاعضاء في بداية الفصل الدراسي ومتابعة التقييم
-                                    وبحث سبل تطوير
-                                    عمل الشراكة</p>
+                                @if (isset($homes))
+                                    <p class="text-muted">{!! nl2br(e($homes->where('title', 'quality')->first()->body))!!}</p>
+                                @else
+                                    <p class="text-muted">مراجعة بنود تقييم الاعضاء في بداية الفصل الدراسي ومتابعة
+                                        التقييم وبحث سبل تطوير عمل الشراكة</p>
+                                @endif
                             </div>
                         </div>
                     </li>
@@ -245,11 +279,11 @@
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
-                        <!-- <li class="list-inline-item">
-                          <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                          </a>
-                        </li> -->
+                        {{--                        <li class="list-inline-item">--}}
+                        {{--                            <a href="#">--}}
+                        {{--                                <i class="fab fa-facebook-f"></i>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
                         <li class="list-inline-item">
                             <a href="#">
                                 <i class="fab fa-linkedin-in"></i>
@@ -262,7 +296,7 @@
                 <div class="team-member">
                     <img class="mx-auto rounded-circle" src="https://i.ibb.co/6Pxb59Y/2.jpg" alt="">
                     <h4>Larry Parker</h4>
-                    <p class="text-muted">نائب قائد الشراكة الطلابية </p>
+                    <p class="text-muted">نائب قائد الشراكة الطلابية</p>
                     <ul class="list-inline social-buttons" dir="ltr">
                         <li class="list-inline-item">
                             <a href="#">
@@ -288,6 +322,7 @@
               </div>
             </div> -->
         </div>
+    </div>
 </section>
 <!-- <div class="contianer">
 

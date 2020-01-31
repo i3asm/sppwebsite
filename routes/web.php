@@ -14,9 +14,7 @@
 use Illuminate\Support\Facades\Route;
 
 //home page
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomePageController@index')->name('home');
 
 // the archive page, probably will be changed to something like "graduates" or something
 Route::get('archive', 'ArchiveController@index')->name('archive');
