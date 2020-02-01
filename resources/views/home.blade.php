@@ -31,7 +31,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" dir="ltr">
     <div class="container ">
-        <a href="index.html" class="navbar-brand"><img class="navbar-brand js-scroll-trigger  img-fluid  "
+        <a href="/" class="navbar-brand"><img class="navbar-brand js-scroll-trigger  img-fluid  "
                                                        height="130px" width="130ox" alt="img-responsive" id="logo"
                                                        src="https://i.ibb.co/TqTGGsw/logo-spp-color.png"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"

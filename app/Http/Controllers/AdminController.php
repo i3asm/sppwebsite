@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\archive;
 use App\homePage;
+use App\Imports\ArchiveImport;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Excel;
 
 class AdminController extends Controller
 {
@@ -142,7 +144,7 @@ class AdminController extends Controller
         $archive = archive::find($id);
         //delete the old avatar if it's not the default one
         if ($archive->avatar != 'user.jpg')
-            unlink(storage_path('app/public/archives/' . $archive->avatar));
+            unlink(storage_path('storage/public/archives/' . $archive->avatar));
         //name the new one
         $avatarName = $archive->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
         // store it with the name
@@ -153,5 +155,14 @@ class AdminController extends Controller
 
         return redirect('admin');
     }
+
+
+    public function import()
+    {
+        Excel::import(new ArchiveImport(), request()->file('file'));
+
+        return redirect('/admin');
+    }
+
 
 }

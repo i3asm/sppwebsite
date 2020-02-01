@@ -7,6 +7,7 @@ use App\homePage;
 use DB;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ArchiveController extends Controller
 {
@@ -26,11 +27,7 @@ class ArchiveController extends Controller
     }
 
     //TODO: EN
-    //TODO: start year
-    //TODO: end year
-
     //TODO: video
-    //TODO:
 
 //	// Display the specified resource.
 //	// actually this method never used I was just playing with it

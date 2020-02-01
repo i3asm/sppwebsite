@@ -3,7 +3,7 @@
 {{--@section('body')--}}
 <h2 class="rtl">إضافة أشخاص:</h2>
 
-<div class="row justify-content-center">
+<div class="rtl row justify-content-center">
     <div class="col-md-9">
 
 
