@@ -13,18 +13,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-//home page
+// home page
 Route::get('/', function () {
     return view('home');
 }) -> name('home');
 
-// the archive page, probably will be changed to something like "graduates" or something
+// routes for the previous leaders page
 Route::get('archive/{index}', 'ArchiveController@index')->name('archive');
-Route::get('archive', function (){return redirect('archive/0');})->name('archivezero');
+Route::get('archive', function (){return redirect(route('archive', ['index' => 0]));})->name('archiveMain');
 
 // all the authentication routes
 Auth::routes(['verify' => 'true']);
 
+// admin page routes
 Route::get('/admin', 'AdminController@edit')->name('admin.edit')->middleware(['verified', 'admin']);
 Route::post('/admin', 'AdminController@store')->name('admin.store')->middleware(['verified', 'admin']);
 Route::put('/admin/{id}', 'AdminController@update')->name('admin.update')->middleware(['verified', 'admin']);

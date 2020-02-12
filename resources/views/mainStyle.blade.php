@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse text-right" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{route('archivezero')}}">رابطة القادة</a>
+                    <a class="nav-link js-scroll-trigger" href="{{route('archiveMain')}}">رابطة القادة</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#">إحسب معدلك</a>
