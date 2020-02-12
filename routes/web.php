@@ -13,14 +13,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-// home page
-Route::get('/', function () {
-    return view('home');
-}) -> name('home');
+//home page
+Route::get('/', 'HomePageController@index')->name('home');
+
 
 // routes for the previous leaders page
 Route::get('archive/{index}', 'ArchiveController@index')->name('archive');
 Route::get('archive', function (){return redirect(route('archive', ['index' => 0]));})->name('archiveMain');
+
+// import from .csv file
+Route::post('archive', 'AdminController@import')->name('archiveImport')->middleware(['verified', 'admin']);
 
 // all the authentication routes
 Auth::routes(['verify' => 'true']);
@@ -41,4 +43,6 @@ Route::get('/users/{id}', 'userController@distroy')->name('users.delete')->middl
 // control home page elements, to make sure the website only need the spp staff
 Route::put('/homePage', 'HomePageController@store')->name('home.store')->middleware(['verified', 'admin']);
 Route::post('/homePage/{id}', 'HomePageController@edit')->name('home.edit')->middleware(['verified', 'admin']);
+
+
 

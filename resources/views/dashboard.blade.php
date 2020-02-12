@@ -26,7 +26,7 @@
             margin-bottom: 20px;
         }
 
-        .seperator {
+        .separator {
             height: 2px;
             margin: 19px;
             background-color: #ddd;
@@ -49,8 +49,10 @@
                             </div>
                         @endif
                         @component('dashboard.archiveEdit', ['years' => $years, 'persons' => $persons])@endcomponent
-                        <div class="seperator"></div>
+                        <div class="separator"></div>
                         @component('dashboard.addArchive') @endcomponent
+                        <div class="separator"></div>
+                            @component('dashboard.importArchive') @endcomponent
                     </div>
                 </div>
             </div>
@@ -100,5 +102,4 @@
             </div>
         </div>
     </div>
-
 @endsection

@@ -32,7 +32,7 @@
                     <p class="text-danger">PUT A NAME !!!</p>
                     @enderror
 
-                    <label class="rtl">المنصب:
+                    <label class="rtl">المنصب:، قائد\ة، نائب\ة
                         <input type="text" class="form-control" name="position"
                                value="{{$person->position}}" required>
                     </label>
@@ -61,7 +61,7 @@
                                value="{{$person->phone}}">
                     </label>
                     @error('phone')
-                    <p class="text-danger">put a link like https://x.com/username</p>
+                    <p class="text-danger">put a phone number like 0512345678</p>
                     @enderror
 
                     <label class="rtl">email:
@@ -69,14 +69,15 @@
                                value="{{$person->email}}">
                     </label>
                     @error('email')
-                    <p class="text-danger">put a link like https://x.com/username</p>
+                    <p class="text-danger">put an email like user@server.domain</p>
                     @enderror
 
-                    <img src="{{ asset('archives/'.$person->avatar) }}" style="max-width: 30%; max-height: 30%" alt=""
+                    <img src="{{ asset('storage/public/archives/'.$person->avatar) }}" style="max-width: 100px; max-height: 100px"
+                         alt=""
                          title="">
-                    <input class="form-control-file" type="file" name="avatar" id="avatar" aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image
-                        should not be more than 2MB.</small>
+                    <input class="form-control-file" type="file" name="avatar" id="avatar" aria-describedby="filehelp">
+                    <small id="filehelp" class="form-text text-muted">please upload a valid image file. size of image
+                        should not be more than 2mb.</small>
                     @error('avatar')
                     <p class="text-danger">try a real image file</p>
                     @enderror

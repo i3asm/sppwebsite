@@ -42,8 +42,10 @@
 
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
+                    <small class="form-text text-muted rtl"> لازم تتقيد بأسماء العناوين عشان تشتغل لذلك خليتها قائمة
+                        منسدلة بدل ما تكتبها يدوياً</small>
                     <button type="submit" class="btn btn-primary">
-                        {{ __('إضافة عنوان جديد، غالباً ما راح يشتغل، بس حطيته عشان اضيفها في البداية.') }}
+                        {{ __('إضافة عنوان جديد') }}
                     </button>
                 </div>
             </div>
