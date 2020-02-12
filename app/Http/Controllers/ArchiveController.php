@@ -10,22 +10,27 @@ use Illuminate\View\View;
 
 class ArchiveController extends Controller
 {
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Factory|View
-	 */
-	public function index()
-	{
-		$years = DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
-		$persons = DB::table('archives')->get();
-		return view("archive", [
-			'years' => $years,
-			'persons' => $persons,
-		]);
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Factory|View
+     */
+    public function index($index)
+    {
+//		$years = DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
+        $persons = DB::table('archives')->get()->chunk(4);
+        $count = $persons->count();
+        if ($index > $count-1)
+            abort(404);
+        return view("prevLeaders", [
+//			'years' => $years,
+            'title' => "رابطة القادة",
+            'persons' => $persons[$index],
+            'pages' => $count
+        ]);
+    }
 
-	//TODO: EN
+    //TODO: EN
     //TODO: start year
     //TODO: end year
     //TODO: images

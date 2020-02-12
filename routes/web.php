@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 //home page
 Route::get('/', function () {
     return view('home');
-});
+}) -> name('home');
 
 // the archive page, probably will be changed to something like "graduates" or something
-Route::get('archive', 'ArchiveController@index')->name('archive');
+Route::get('archive/{index}', 'ArchiveController@index')->name('archive');
+Route::get('archive', function (){return redirect('archive/0');})->name('archivezero');
 
 // all the authentication routes
 Auth::routes(['verify' => 'true']);
