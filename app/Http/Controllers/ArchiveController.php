@@ -16,18 +16,20 @@ class ArchiveController extends Controller
      *
      * @return Factory|View
      */
-    public function index()
+    public function index($index)
     {
 //		$years = DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
-        $persons = DB::table('archives')->orderBy('year', 'desc')->get();
-        return view("archive", [
+        $persons = DB::table('archives')->get()->chunk(4);
+        $count = $persons->count();
+        if ($index > $count-1)
+            abort(404);
+        return view("prevLeaders", [
 //			'years' => $years,
-            'persons' => $persons,
+            'title' => "رابطة القادة",
+            'persons' => $persons[$index],
+            'pages' => $count
         ]);
     }
-
-    //TODO: EN
-    //TODO: video
 
 //	// Display the specified resource.
 //	// actually this method never used I was just playing with it

@@ -16,13 +16,18 @@ use Illuminate\Support\Facades\Route;
 //home page
 Route::get('/', 'HomePageController@index')->name('home');
 
-// the archive page, probably will be changed to something like "graduates" or something
-Route::get('archive', 'ArchiveController@index')->name('archive');
+
+// routes for the previous leaders page
+Route::get('archive/{index}', 'ArchiveController@index')->name('archive');
+Route::get('archive', function (){return redirect(route('archive', ['index' => 0]));})->name('archiveMain');
+
+// import from .csv file
 Route::post('archive', 'AdminController@import')->name('archiveImport')->middleware(['verified', 'admin']);
 
 // all the authentication routes
 Auth::routes(['verify' => 'true']);
 
+// admin page routes
 Route::get('/admin', 'AdminController@edit')->name('admin.edit')->middleware(['verified', 'admin']);
 Route::post('/admin', 'AdminController@store')->name('admin.store')->middleware(['verified', 'admin']);
 Route::put('/admin/{id}', 'AdminController@update')->name('admin.update')->middleware(['verified', 'admin']);
