@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-
-{{--
-	This is the main styling for the entire site.
-	It supposd to have the header and the footer
-
-	This is your area, make it as you like. your choice :)
---}}
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 	<meta charset="utf-8">

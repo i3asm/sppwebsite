@@ -31,5 +31,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class archive extends Model
 {
-    //
+    public $fillable = [
+        'year',
+        'name',
+        'position',
+        'twitter',
+        'linkedin',
+        'phone',
+        'email',
+        'avatar'
+        ];
 }

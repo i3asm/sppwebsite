@@ -1,25 +1,25 @@
 <div class="row justify-content-center">
     <div class="col-md-9">
 
+        <div class="rtl">
+            <p>العناوين المقبولة:</p>
+            <p class="text-danger">العناوين لازم تكتبها بالانجليزي وهي تلقائياً بتصير عربي</p>
+            <p>aboutUs = من نحن؟</p>
+            <p>vision = رؤيتنا</p>
+            <p>message = رسالتنا</p>
+            <p>goals = أهدافنا</p>
+            <p>الفرق:</p>
+            <p>media = الفريق الاعلامي</p>
+            <p>pr = العلاقات العامة</p>
+            <p>hr = الموارد البشرية</p>
+            <p>oas = التنظيم والدعم</p>
+            <p>quality = الجودة</p>
+        </div>
+
         @foreach($homes as $home)
             <form class="rtl" method="POST"
                   action="{{route('home.edit', ['id'=>$home->id])}}">
                 @csrf
-
-                <div class="rtl">
-                    <p>العناوين المقبولة:</p>
-                    <p class="text-danger">العناوين لازم تكتبها بالانجليزي وهي تلقائياً بتصير عربي</p>
-                    <p>aboutUs = من نحن؟</p>
-                    <p>vision = رؤيتنا</p>
-                    <p>message = رسالتنا</p>
-                    <p>goals = أهدافنا</p>
-                    <p>الفرق:</p>
-                    <p>media = الفريق الاعلامي</p>
-                    <p>pr = العلاقات العامة</p>
-                    <p>hr = الموارد البشرية</p>
-                    <p>oas = التنظيم والدعم</p>
-                    <p>quality = الجودة</p>
-                </div>
 
                 <div class="form-group rtl">
                     <label for="title">العنوان</label>

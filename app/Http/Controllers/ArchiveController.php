@@ -7,31 +7,27 @@ use App\homePage;
 use DB;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ArchiveController extends Controller
 {
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Factory|View
-	 */
-	public function index()
-	{
-		$years = DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
-		$persons = DB::table('archives')->get();
-		return view("archive", [
-			'years' => $years,
-			'persons' => $persons,
-		]);
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Factory|View
+     */
+    public function index()
+    {
+//		$years = DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
+        $persons = DB::table('archives')->orderBy('year', 'desc')->get();
+        return view("archive", [
+//			'years' => $years,
+            'persons' => $persons,
+        ]);
+    }
 
-	//TODO: EN
-    //TODO: start year
-    //TODO: end year
-    //TODO: images
-    //TODO: links
+    //TODO: EN
     //TODO: video
-    //TODO:
 
 //	// Display the specified resource.
 //	// actually this method never used I was just playing with it
