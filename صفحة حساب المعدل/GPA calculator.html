@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--CSS files-->
+  <link rel="stylesheet" type="text/css" href="EssentialCSS.css">
+  <!-----------HTML START HERE !!------------->
+  <title>الشراكة الطلابية</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container ">
+      <a href="index.html" class="navbar-brand"><img class="navbar-brand js-scroll-trigger  img-fluid  " height="130px"
+          width="130ox" alt="img-responsive" id="logo" src="Img/logo spp color.png"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#">القادة السابقين</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#">الصفحة الرئيسية</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-heading">حساب المعدل</div>
+
+
+      </div>
+    </div>
+  </header>
+  <br>
+  <!--GPA calculator-->
+  <div class="main main-raised">
+    <div class="container ">
+      <div class="section ">
+
+        <div class="container" dir="rtl">
+          <div class="row gpa-system">
+            <div class="col col-sm-1 checkBox">
+              <label>
+                نظام 5.00
+                <input type="radio" class="five-gpa" name="gpa-type" checked />
+              </label>
+            </div>
+            <div class="col col-sm-1 checkBox">
+              <label>
+                نظام 4.00
+                <input type="radio" class="four-gpa" name="gpa-type" />
+              </label>
+            </div>
+          </div>
+          <div class="row gpa-system form-group">
+            <div class="col col-md-2">
+              <input type="text" class="form-control" id="prevGPA" placeholder="المعدل السابق" />
+            </div>
+            <div class="col col-md-2">
+              <input type="text" class="form-control" id="prevHours" placeholder="عدد الساعات السابقة" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row form-group subject" id="subject1">
+                <div class="col col-md-4 subject-header">
+                  <i class="fas fa-times remove-subject" id="remove-btn" onclick="killMe(this)"
+                    style="display: none"></i>
+                  <p>المقرر #<span class="subject-number">1</span></p>
+                </div>
+
+                <div class="col col-md-2">
+                  <input type="number" class="hours hours1 form-control" min="0" placeholder="الساعات" />
+                </div>
+                <div class="col col-md-2">
+                  <select class="grade grade1" style="width: 100%;">
+                    <option data-option="1" value="5.00">A+</option>
+                    <option data-option="2" value="4.75">A</option>
+                    <option data-option="3" value="4.50">B+</option>
+                    <option data-option="4" value="4.00">B</option>
+                    <option data-option="5" value="3.50">C+</option>
+                    <option data-option="6" value="3.00">C</option>
+                    <option data-option="7" value="2.50">D+</option>
+                    <option data-option="8" value="2.00">D</option>
+                    <option data-option="9" value="1.00">F</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <button class="btn btn-primary calc">احسب</button>
+            </div>
+            <div style="margin-right:5px;">
+              <button class="btn btn-info add_subject">اضافة مقرر</button>
+            </div>
+            <div class="row" style="margin-right:5px; ">
+              <h3 style="margin-top: 5px; margin-right: 10px;">معدلك: </h3>
+              <h3 class="gpa-grade" style="margin-top: 5px; margin-right: 10px;"> 0.0</h3>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/spp_ksu/">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://twitter.com/spp_ksu?lang=ar">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <span class="copyright">جميع الحقوق محفوظة &copy; الشراكة الطلابية 2020</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="gpa.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script>
+    !function (e) { "use strict"; e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () { if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) { var a = e(this.hash); if ((a = a.length ? a : e("[name=" + this.hash.slice(1) + "]")).length) return e("html, body").animate({ scrollTop: a.offset().top - 54 }, 1e3, "easeInOutExpo"), !1 } }), e(".js-scroll-trigger").click(function () { e(".navbar-collapse").collapse("hide") }), e("body").scrollspy({ target: "#mainNav", offset: 56 }); function a() { 100 < e("#mainNav").offset().top ? e("#mainNav").addClass("navbar-shrink") : e("#mainNav").removeClass("navbar-shrink") } a(), e(window).scroll(a) }(jQuery);
+  </script>
+  <script>
+
+    (function ($) {
+      "use strict"; // Start of use strict
+
+      // Smooth scrolling using jQuery easing
+      $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: (target.offset().top - 54)
+            }, 200, "easeInOutExpo");
+            return false;
+          }
+        }
+      });
+
+      // Closes responsive menu when a scroll trigger link is clicked
+      $('.js-scroll-trigger').click(function () {
+        $('.navbar-collapse').collapse('hide');
+      });
+
+      // Activate scrollspy to add active class to navbar items on scroll
+      $('body').scrollspy({
+        target: '#mainNav',
+        offset: 56
+      });
+
+      // Collapse Navbar
+      var navbarCollapse = function () {
+        if ($("#mainNav").offset().top > 100) {
+          $("#mainNav").addClass("navbar-shrink");
+        } else {
+          $("#mainNav").removeClass("navbar-shrink");
+        }
+      };
+      // Collapse now if page is not at top
+      navbarCollapse();
+      // Collapse the navbar when page is scrolled
+      $(window).scroll(navbarCollapse);
+
+    })(jQuery); // End of use strict
+
+  </script>
+</body>
+
+</html>
