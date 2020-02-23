@@ -14,12 +14,15 @@ class ArchiveController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param $index
      * @return Factory|View
      */
     public function index($index)
     {
+//        $test = factory(\App\archive::class, 22)->create();
+
 //		$years = DB::table('archives')->orderBy('year', 'desc')->distinct()->pluck('year');
-        $persons = DB::table('archives')->get()->chunk(4);
+        $persons = DB::table('archives')->get()->chunk(12);
         $count = $persons->count();
         if ($index > $count-1)
             abort(404);

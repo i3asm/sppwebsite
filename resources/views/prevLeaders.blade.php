@@ -42,6 +42,7 @@
         }
 
         p {
+            font-family: "Tajawal", sans-serif;
             line-height: 1.75;
         }
 
@@ -62,7 +63,7 @@
         h3,
         h4,
         h5,
-        h6 {
+        h6{
             font-weight: 700;
             font-family: "Tajawal", sans-serif;
         }
@@ -522,7 +523,6 @@
                                                 <h4 class="card-text">{{$person->phone}}</h4>
                                                 <p class="card-text">{{$person->email}}</p>
                                                 <ul class="list-inline">
-                                                    <!-- <a class="tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a> -->
                                                     <button onclick="window.location.href = '{{$person->twitter}}'"
                                                             class="fab fa-lg fa-twitter tw-ic mr-3 border-0 social-buttons"></button>
                                                     <button onclick="window.location.href = '{{$person->linkedin}}'"
