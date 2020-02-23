@@ -131,7 +131,11 @@ class AdminController extends Controller
     public function destroy($id)
     {
         $archive = archive::find($id);
-        unlink(storage_path('app/public/archives/' . $archive->avatar));
+        try {
+            unlink(storage_path('app/public/archives/' . $archive->avatar));
+        } catch (\Exception $e){
+            log("unlink failed");
+    }
         $archive->delete();
         return redirect('/admin');
     }

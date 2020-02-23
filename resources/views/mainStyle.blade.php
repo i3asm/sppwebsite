@@ -6,8 +6,6 @@
     <meta name="author" content="">
 
     <link href="{{ asset('css/HomePage.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="{{ asset('js/HomePageJscript.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/javaScriptT.js') }}"></script>
 
     <!-----------HTML START HERE !!------------->
     <title>{{$title ?? "الشراكة الطلابية"}}</title>
@@ -22,6 +20,45 @@
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{asset('js/jquery.easing.js')}}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{asset('js/HomePageJscript.js')}}"></script>
+    <script src="{{asset('js/javaScriptT.js')}}"></script>
+
+    {{--    the script I go from w3schools.com--}}
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("mainNav").style.padding = "30px 10px";
+                document.getElementById("mainNav").style.backgroundColor = "#212529";
+                document.getElementById("logo").style.height = "60px";
+                document.getElementById("logo").style.width = "60px";
+            } else {
+                document.getElementById("mainNav").style.padding = "80px 10px";
+                document.getElementById("mainNav").style.backgroundColor = "";
+                document.getElementById("logo").style.height = "140px";
+                document.getElementById("logo").style.width = "130px";
+            }
+        }
+    </script>
+
+
+    <style>
+        .fab {
+            margin: 15px;
+        }
+    </style>
+
     @yield('head')
 
 </head>
@@ -32,8 +69,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" dir="ltr">
     <div class="container ">
         <a href="{{route('home')}}" class="navbar-brand"><img class="navbar-brand js-scroll-trigger  img-fluid  "
-                                                       height="130px" width="130ox" alt="img-responsive" id="logo"
-                                                       src="https://i.ibb.co/TqTGGsw/logo-spp-color.png"></a>
+                                                              height="130px" width="130px" alt="img-responsive"
+                                                              id="logo"
+                                                              src="{{asset('storage/homeImages/logo-spp-color.png')}}"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -45,10 +83,12 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{route('archiveMain')}}">رابطة القادة</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">إحسب معدلك</a>
-                </li>
-                <!--Who us? navbar btn-->
+                @if(route::has('GPA'))
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{route('GPA')}}">إحسب معدلك</a>
+                    </li>
+            @endif
+            <!--Who us? navbar btn-->
                 <!-- <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#services">من نحن؟</a>
                 </li> -->
@@ -63,7 +103,7 @@
         <div class="intro-text">
             <div class="intro-heading">{{$title ?? "الشراكة الطلابية"}}</div>
             <!-- <div class="intro-lead-in"><br></div> -->
-            <a class="btn btn-primary btn-lg text-uppercase js-scroll-trigger" href="#services"> تعرف علينا</a>
+            @yield('scroll')
 
         </div>
     </div>
@@ -96,18 +136,6 @@
     </div>
 </footer>
 
-
-<!-- Bootstrap core JavaScript -->
-<script src="../../vendor/jquery/jquery.min.js"></script>
-<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-
-<!-- Custom scripts for this template -->
-<script src="../../public/js/HomePageJscript.js"></script>
-<script src="../../public/js/javaScriptT.js"></script>
 
 </body>
 </html>

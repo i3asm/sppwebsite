@@ -14,7 +14,7 @@ class HomePageController extends Controller
         $homes = DB::table('home_pages')->get();
 //        dd($homes->where('title', 'goals')->first()->body);
         return view('home', [
-//            'homes' => $homes,
+            'homes' => $homes,
         ]);
     }
 
