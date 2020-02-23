@@ -134,7 +134,7 @@ class AdminController extends Controller
         try {
             unlink(storage_path('app/public/archives/' . $archive->avatar));
         } catch (\Exception $e){
-            log("unlink failed");
+            Log::error("unlink failed");
     }
         $archive->delete();
         return redirect('/admin');
