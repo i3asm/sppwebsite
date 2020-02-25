@@ -504,7 +504,7 @@
                                         <div class="card">
                                             <div class="card-body text-xs-center">
                                                 <p>
-                                                    <img src="{{ asset('archives/'.$person->avatar) }}" style="max-width: 200px; max-height: 200px"
+                                                    <img src="{{ asset('archives/'.$person->avatar, true) }}" style="max-width: 200px; max-height: 200px"
                                                          alt="صورة {{$person->name}}" title="صورة {{$person->name}}">
                                                 </p>
 

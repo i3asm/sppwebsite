@@ -84,7 +84,7 @@
                         <li>
                             <div class="timeline-image " id="img1">
                                 <img class="rounded-circle img-fluid"
-                                     src="{{asset('homeImages/media.jpg')}}"
+                                     src="{{asset('homeImages/media.jpg', true)}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel ">
@@ -104,7 +104,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image " id="img2">
-                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/PR.png')}}"
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/PR.png', true)}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel ">
@@ -124,7 +124,7 @@
                         </li>
                         <li>
                             <div class="timeline-image" id="img3">
-                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/HR.png')}}"
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/HR.png', true)}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel">
@@ -144,7 +144,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image" id="img4">
-                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/Team.png')}}" alt="">
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/Team.png', true)}}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -163,7 +163,7 @@
                         </li>
                         <li class="timeline-image">
                             <div class="timeline-image" id="img5">
-                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/QT.png')}}"
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/QT.png', true)}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel">

@@ -21,15 +21,15 @@
     <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{{asset('js/jquery.js')}}"></script>
-    <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
+    <script src="{{asset('js/jquery.js', true)}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.js', true)}}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="{{asset('js/jquery.easing.js')}}"></script>
+    <script src="{{asset('js/jquery.easing.js', true)}}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{{asset('js/HomePageJscript.js')}}"></script>
-    <script src="{{asset('js/javaScriptT.js')}}"></script>
+    <script src="{{asset('js/HomePageJscript.js', true)}}"></script>
+    <script src="{{asset('js/javaScriptT.js', true)}}"></script>
 
     {{--    the script I go from w3schools.com--}}
     <script>
@@ -71,7 +71,7 @@
         <a href="{{route('home')}}" class="navbar-brand"><img class="navbar-brand js-scroll-trigger  img-fluid  "
                                                               height="130px" width="130px" alt="img-responsive"
                                                               id="logo"
-                                                              src="{{asset('homeImages/logo-spp-color.png')}}"></a>
+                                                              src="{{asset('homeImages/logo-spp-color.png', true)}}"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
