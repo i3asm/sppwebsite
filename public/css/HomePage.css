@@ -220,7 +220,8 @@
       header.masthead {
         text-align: center;
         color: white;
-        background-image: url("https://i.ibb.co/n1MqWff/King-saud-university-entrance.png");
+        height: 100vh;
+        background-image: url(../homeImages/King-saud-university-entrance.png);
         background-repeat: no-repeat;
         background-attachment: scroll;
         background-position: center center;

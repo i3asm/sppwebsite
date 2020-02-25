@@ -84,7 +84,7 @@
                         <li>
                             <div class="timeline-image " id="img1">
                                 <img class="rounded-circle img-fluid"
-                                     src="{{asset('storage/homeImages/media.jpg')}}"
+                                     src="{{asset('homeImages/media.jpg')}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel ">
@@ -104,7 +104,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image " id="img2">
-                                <img class="rounded-circle img-fluid" src="{{asset('storage/homeImages/PR.png')}}"
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/PR.png')}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel ">
@@ -124,7 +124,7 @@
                         </li>
                         <li>
                             <div class="timeline-image" id="img3">
-                                <img class="rounded-circle img-fluid" src="{{asset('storage/homeImages/HR.png')}}"
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/HR.png')}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel">
@@ -163,7 +163,7 @@
                         </li>
                         <li class="timeline-image">
                             <div class="timeline-image" id="img5">
-                                <img class="rounded-circle img-fluid" src="{{asset('storage/homeImages/QT.png')}}"
+                                <img class="rounded-circle img-fluid" src="{{asset('homeImages/QT.png')}}"
                                      alt="">
                             </div>
                             <div class="timeline-panel">
@@ -212,7 +212,7 @@
                 <div class="col-sm-6">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="https://i.ibb.co/xfMhzmQ/1.jpg" alt="">
-                        <h4>Kay Garland</h4>
+                        <h4>عبدالرحمن العاصم</h4>
                         <p class="text-muted"> قائد الشراكة الطلابية</p>
                         <ul class="list-inline social-buttons " dir="ltr">
                             <li class="list-inline-item">
@@ -236,7 +236,7 @@
                 <div class="col-sm-6">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="https://i.ibb.co/6Pxb59Y/2.jpg" alt="">
-                        <h4>Larry Parker</h4>
+                        <h4>علي العتيق</h4>
                         <p class="text-muted">نائب قائد الشراكة الطلابية </p>
                         <ul class="list-inline social-buttons" dir="ltr">
                             <li class="list-inline-item">
@@ -244,11 +244,6 @@
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
-                            <!-- <li class="list-inline-item">
-                              <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                              </a>
-                            </li> -->
                             <li class="list-inline-item">
                                 <a href="#">
                                     <i class="fab fa-linkedin-in"></i>
@@ -257,11 +252,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- <div class="row">
-                  <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted"></p>
-                  </div>
-                </div> -->
             </div>
         </div>
     </section>

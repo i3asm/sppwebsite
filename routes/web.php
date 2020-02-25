@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomePageController@index')->name('home');
 
 
+//GPA calculator page
+Route::get('/GPA', function () {
+    return view('GPA', ['title' => 'احسب معدلك']);
+})->name('GPA');
+
 // routes for the previous leaders page
 Route::get('archive/{index}', 'ArchiveController@index')->name('archive');
 Route::get('archive', function (){return redirect(route('archive', ['index' => 0]));})->name('archiveMain');
