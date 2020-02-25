@@ -211,7 +211,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="https://www.google.com/url?sa=i&url=http%3A%2F%2Fcostumefail.com%2F2010%2F10%2F26%2Fcaptain-america-costume-fail%2F&psig=AOvVaw0x7PAL0rp1v6RebeNGFnqz&ust=1582701592935000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKi-g4iV7OcCFQAAAAAdAAAAABAD" alt="">
+                        <img class="mx-auto rounded-circle" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJilHZ_DdBYg&psig=AOvVaw3nrvnrQtMjl6qhhRsngVc6&ust=1582701877683000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjM3IyW7OcCFQAAAAAdAAAAABAJ" alt="">
                         <h4>عبدالرحمن العاصم</h4>
                         <p class="text-muted"> قائد الشراكة الطلابية</p>
                         <ul class="list-inline social-buttons " dir="ltr">
@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="https://vignette.wikia.nocookie.net/ironman/images/a/ad/Captain-america-avengers.jpg/revision/latest?cb=20191118182630" alt="">
+                        <img class="mx-auto rounded-circle" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHello_(web_series)&psig=AOvVaw1J7bfeUmo1vHLa1X3X6aXt&ust=1582701921725000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDN46GW7OcCFQAAAAAdAAAAABAJ" alt="">
                         <h4>علي العتيق</h4>
                         <p class="text-muted">نائب قائد الشراكة الطلابية </p>
                         <ul class="list-inline social-buttons" dir="ltr">
