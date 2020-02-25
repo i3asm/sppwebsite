@@ -16,13 +16,13 @@ class ArchiveImport implements ToModel
     public function model(array $row)
     {
         return new archive([
-            'year' => $row['year'],
-            'name' => $row['name'],
-            'position' => $row['position'],
-            'twitter' => $row['twitter'],
-            'linkedin' => $row['linkedin'],
-            'email' => $row['email'],
-            'phone' => $row['phone'],
+            'year' => $row[0],
+            'name' => $row[1],
+            'position' => $row[2],
+            'twitter' => $row[3],
+            'linkedin' => $row[4],
+            'email' => $row[5],
+            'phone' => $row[6],
         ]);
     }
 }
