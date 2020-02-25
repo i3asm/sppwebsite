@@ -42,7 +42,7 @@
                 document.getElementById("mainNav").style.padding = "30px 10px";
                 document.getElementById("mainNav").style.backgroundColor = "#212529";
                 document.getElementById("logo").style.height = "60px";
-                document.getElementById("logo").style.width = "60px";
+                document.getElementById("logo").style.width = "50px";
             } else {
                 document.getElementById("mainNav").style.padding = "80px 10px";
                 document.getElementById("mainNav").style.backgroundColor = "";
@@ -71,7 +71,7 @@
         <a href="{{route('home')}}" class="navbar-brand"><img class="navbar-brand js-scroll-trigger  img-fluid  "
                                                               height="130px" width="130px" alt="img-responsive"
                                                               id="logo"
-                                                              src="{{asset('storage/homeImages/logo-spp-color.png')}}"></a>
+                                                              src="{{asset('homeImages/logo-spp-color.png')}}"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
