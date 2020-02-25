@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="{{ asset('css/HomePage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/HomePage.css', true) }}" rel="stylesheet">
 
     <!-----------HTML START HERE !!------------->
     <title>{{$title ?? "الشراكة الطلابية"}}</title>
