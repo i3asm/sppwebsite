@@ -18,7 +18,7 @@ class ArchiveImport implements ToModel, WithHeadingRow
     {
         return new archive([
             'year' => $row['year'],
-            'name' => $row['Name'],
+            'name' => $row['name'],
             'position' => $row['position'],
             'twitter' => $row['twitter'],
             'linkedin' => $row['linkedin'],
