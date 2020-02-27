@@ -5,8 +5,9 @@ namespace App\Imports;
 use App\archive;
 use Illuminate\Database\Eloquent\Model;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ArchiveImport implements ToModel
+class ArchiveImport implements ToModel, WithHeadingRow
 {
     /**
      * @param array $row
