@@ -19,7 +19,7 @@ class ArchiveImport implements ToModel
             'year' => $row['year'],
             'name' => $row['Name'],
             'position' => $row['position'],
-            'twitter' => $row['position'],
+            'twitter' => $row['twitter'],
             'linkedin' => $row['linkedin'],
             'email' => $row['email'],
             'phone' => $row['phone'],
