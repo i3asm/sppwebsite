@@ -1,4 +1,4 @@
-!function (e) {
+jQuery(document).ready(function(){
     "use strict";
 
     e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
@@ -15,4 +15,4 @@
     }
 
     a(), e(window).scroll(a)
-}(jQuery);
+});

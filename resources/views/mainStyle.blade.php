@@ -20,37 +20,37 @@
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700&display=swap" rel="stylesheet">
 
-{{--    <!-- Bootstrap core JavaScript -->--}}
-{{--    <script src="{{asset('js/jquery.js', true)}}"></script>--}}
-{{--    <script src="{{asset('js/bootstrap.bundle.js', true)}}"></script>--}}
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('js/jquery.js', true)}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.js', true)}}"></script>
 
-{{--    <!-- Plugin JavaScript -->--}}
-{{--    <script src="{{asset('js/jquery.easing.js', true)}}"></script>--}}
+    <!-- Plugin JavaScript -->
+    <script src="{{asset('js/jquery.easing.js', true)}}"></script>
 
-{{--    <!-- Custom scripts for this template -->--}}
-{{--    <script src="{{asset('js/HomePageJscript.js', true)}}"></script>--}}
-{{--    <script src="{{asset('js/javaScriptT.js', true)}}"></script>--}}
+    <!-- Custom scripts for this template -->
+    <script src="{{asset('js/HomePageJscript.js', true)}}"></script>
+    <script src="{{asset('js/javaScriptT.js', true)}}"></script>
 
     {{--    the script I go from w3schools.com--}}
-    <script>
-        window.onscroll = function () {
-            scrollFunction()
-        };
+{{--    <script>--}}
+{{--        window.onscroll = function () {--}}
+{{--            scrollFunction()--}}
+{{--        };--}}
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.getElementById("mainNav").style.padding = "30px 10px";
-                document.getElementById("mainNav").style.backgroundColor = "#212529";
-                document.getElementById("logo").style.height = "60px";
-                document.getElementById("logo").style.width = "50px";
-            } else {
-                document.getElementById("mainNav").style.padding = "80px 10px";
-                document.getElementById("mainNav").style.backgroundColor = "";
-                document.getElementById("logo").style.height = "140px";
-                document.getElementById("logo").style.width = "130px";
-            }
-        }
-    </script>
+{{--        function scrollFunction() {--}}
+{{--            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {--}}
+{{--                document.getElementById("mainNav").style.padding = "30px 10px";--}}
+{{--                document.getElementById("mainNav").style.backgroundColor = "#212529";--}}
+{{--                document.getElementById("logo").style.height = "60px";--}}
+{{--                document.getElementById("logo").style.width = "50px";--}}
+{{--            } else {--}}
+{{--                document.getElementById("mainNav").style.padding = "80px 10px";--}}
+{{--                document.getElementById("mainNav").style.backgroundColor = "";--}}
+{{--                document.getElementById("logo").style.height = "140px";--}}
+{{--                document.getElementById("logo").style.width = "130px";--}}
+{{--            }--}}
+{{--        }--}}
+{{--    </script>--}}
 
 
     <style>
