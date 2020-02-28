@@ -72,7 +72,7 @@
                     <p class="text-danger">put an email like user@server.domain</p>
                     @enderror
 
-                    <img src="{{ secure_asset('storage/archives/'.$person->avatar) }}" style="max-width: 100px; max-height: 100px"
+                    <img src="{{ secure_asset('archives/'.$person->avatar) }}" style="max-width: 100px; max-height: 100px"
                          alt=""
                          title="">
                     <input class="form-control-file" type="file" name="avatar" id="avatar" aria-describedby="filehelp">

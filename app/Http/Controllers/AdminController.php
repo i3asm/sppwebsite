@@ -108,7 +108,7 @@ class AdminController extends Controller
                 } catch (\Exception $e) {
                     log::error('probably did not find the old image');
                 }
-//            name the new one
+            // name the new one
             $avatarName = $archive->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
             // store it with the name
             request()->avatar->storeAs('public/archives', $avatarName);
