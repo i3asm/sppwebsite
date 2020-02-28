@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\archive;
 use App\homePage;
 use App\Imports\ArchiveImport;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {

@@ -3,11 +3,15 @@
 namespace App\Imports;
 
 use App\archive;
+
 use Illuminate\Database\Eloquent\Model;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ArchiveImport implements ToModel, WithHeadingRow
+//use Maatwebsite\Excel\Concerns\OnEachRow;
+//use Maatwebsite\Excel\Row;
+
+class ArchiveImport implements WithHeadingRow, ToModel
 {
     /**
      * @param array $row
@@ -26,4 +30,34 @@ class ArchiveImport implements ToModel, WithHeadingRow
             'phone' => $row['phone'],
         ]);
     }
+
+//    /**
+//     * @inheritDoc
+//     */
+//    public function onRow(Row $row)
+//    {
+//        dd($row);
+//        try {
+//            archive::updateOrCreate(
+//            // this is the keys.
+//                [
+//                    'year' => $row[0],
+//                    'name' => $row[1],
+//                ],
+//                //this is the additional values
+//                [
+//                    'position' => $row[2],
+//                    'twitter' => $row[3],
+//                    'linkedin' => $row[4],
+//                    'email' => $row[5],
+//                    'phone' => $row[9],
+//                ]);
+//
+//        }catch (\Exception $e){
+//            dump($e);
+//            dd('no can do!');
+//
+//        }
+//    }
+
 }
