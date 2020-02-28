@@ -118,12 +118,12 @@
             <div class="col-md-6">
                 <ul class="list-inline social-buttons">
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="https://twitter.com/SPP_KSU">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">
+                        <a href="https://instagram.com/spp_ksu">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </li>
