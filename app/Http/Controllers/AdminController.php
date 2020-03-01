@@ -111,7 +111,8 @@ class AdminController extends Controller
             // name the new one
             $avatarName = $archive->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
             // store it with the name
-            request()->avatar->storeAs('public/archives', $avatarName);
+			Storage::disk('public')->put($avatarName,  request()->avatar);
+            //request()->avatar->storeAs('public/storage/archives', $avatarName);
             // update the name in the database
             $archive->avatar = $avatarName;
         }
