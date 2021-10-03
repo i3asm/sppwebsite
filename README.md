@@ -3,3 +3,6 @@
 # Students Partnership Program (SPP)
 
 they neede a website so here it is. We really enjoyed working in this project and laravel is really amazing
+
+# Update on this project
+I don't work with Laravel anymore and I got sick of how many vulnerabilities notifications I get.
